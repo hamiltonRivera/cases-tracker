@@ -5,3 +5,61 @@
 [x-cloak] {
     display: none;
 }
+
+.blue-bottom{
+    @apply p-2 bg-blue-500 text-white rounded hover:bg-blue-700;
+}
+
+.green-bottom{
+    @apply p-2 bg-green-500 text-white rounded hover:bg-green-700;
+}
+
+.rose-bottom{
+    @apply p-2 bg-rose-600 text-white rounded hover:bg-rose-600;
+}
+
+.short-inputs-form{
+    @apply block
+    md:w-52
+    sm:w-80
+    px-3
+    py-1.5
+    text-base
+    font-normal
+    text-gray-700
+    bg-white bg-clip-padding
+    border border-solid border-gray-300
+    rounded
+    transition
+    ease-in-out
+    m-0
+    focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none;
+}
+
+.table{
+    @apply w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400;
+}
+
+.table-thead{
+    @apply text-xs text-gray-100 uppercase bg-gray-50 dark:bg-blue-700 dark:text-gray-50;
+}
+
+.tr{
+    @apply bg-white border-b dark:bg-gray-100 dark:border-gray-800;
+}
+
+.td{
+    @apply px-6 py-4;
+}
+.searching{
+    @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500
+}
+
+.error{
+    @apply  text-red-600 p-2 rounded;
+}
+
+
+
+
+
