@@ -18,10 +18,11 @@ class CasesTracker extends Component
     public function render()
     {
         $cases = CaseTracker::orderBy('id', 'asc')
-            ->where('date', 'like', '%' . $this->search . '%')->paginate(10);
+            ->where('date', 'like', '%' . $this->search . '%')->paginate(6);
 
         $this->total_closed_cases = CaseTracker::sum('count_per_day');
         $this->remaining = $this->goal - $this->total_closed_cases;
+        $this->date = now();
         return view('livewire.cases-tracker.cases-tracker', compact('cases'));
     }
 
@@ -89,10 +90,5 @@ class CasesTracker extends Component
         Alert::warning('Cases', 'You have deleted records within the specified time interval');
         $this->refresh();
         }
-    }
-
-    public function remaining()
-    {
-        $this->remaining = $this->goal - $this->total_closed_cases;
     }
 }

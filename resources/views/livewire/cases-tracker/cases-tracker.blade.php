@@ -13,6 +13,12 @@
             @include('livewire.cases-tracker.thirdColumn')
         </div>
     </div>
+
+           <hr>
+        <div class="mb-3 mt-3">
+            @include('livewire.cases-tracker.search')
+        </div>
+
     <div>
         @include('livewire.cases-tracker.table')
     </div>
