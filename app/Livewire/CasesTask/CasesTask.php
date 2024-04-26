@@ -30,6 +30,11 @@ class CasesTask extends Component
         ->orderBy('priority', 'asc')
         ->orderByRaw("FIELD(task_status, 'Pending')")
         ->whereAny(['admin', 'date', 'case_number', 'task_status', 'comment', 'priority'], 'like', '%' . $this->search . '%')->paginate(8);
+        foreach($cases as $case){
+          if($case->task_status == "Done"){
+           $case::destroy($case->id);
+          }
+        }
         return view('livewire.cases-task.cases-task', compact('cases'));
     }
 
