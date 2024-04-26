@@ -15,3 +15,10 @@
  <input type="number" wire:model="remaining" class="short-inputs-form" value="{{ $remaining }}" disabled>
 </div>
 
+{{-- cuarta fila  --}}
+@if ($show_tp)
+<div>
+    <label for="">TP</label>
+    <input type="number" wire:model="tp" class="short-inputs-form" value="{{ $tp }}" disabled>
+</div>
+@endif
