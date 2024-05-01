@@ -17,3 +17,4 @@ Route::middleware([
 });
 
 Route::view('task', 'task')->name('task');
+Route::view('strikes', 'strikes')->name('strikes');

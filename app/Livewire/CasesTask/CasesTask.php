@@ -19,9 +19,7 @@ class CasesTask extends Component
     ];
 
     public $priorities = [
-        'First',
-        'Important',
-        'Most Important'
+        1,2,3,4,5,6,7,8,9,10,11,12,13
     ];
 
     public function render()
@@ -103,6 +101,7 @@ class CasesTask extends Component
             ]);
 
             Alert::success('Task', 'Task updated successfully');
+            $this->trackDone();
             $this->refresh();
         }
     }
@@ -125,6 +124,16 @@ class CasesTask extends Component
             Task::destroy($recordToDelete);
             Alert::warning('Cases', 'You have deleted records within the specified time interval');
             $this->refresh();
+        }
+    }
+
+    public function trackDone()
+    {
+        $cases = Task::all();
+        foreach($cases as $case){
+            if($case->task_status == "Done"){
+             $case::destroy($case->id);
+            }
         }
     }
 }

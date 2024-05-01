@@ -13,10 +13,13 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Case counter') }}
                     </x-nav-link>
                     <x-nav-link href="{{ route('task') }}" :active="request()->routeIs('task')">
                         {{ __('Task per day') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('strikes') }}" :active="request()->routeIs('strikes')">
+                        {{ __('Strikes') }}
                     </x-nav-link>
                 </div>
             </div>
