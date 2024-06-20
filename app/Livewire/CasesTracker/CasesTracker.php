@@ -13,7 +13,7 @@ class CasesTracker extends Component
 
     public $search = '';
     public $date, $count_per_day, $selected_id;
-    public $goal = 58, $remaining, $total_closed_cases;
+    public $goal = 77, $remaining, $total_closed_cases;
     public $start_date, $end_date, $tp = 0, $show_tp = false;
     public function render()
     {
@@ -41,7 +41,7 @@ class CasesTracker extends Component
     public function store()
     {
         $this->validate([
-            'date' => 'required|date',
+            'date' => 'required|date|unique:case_trackers,date,except,id',
             'count_per_day' => 'required|numeric'
         ]);
 
