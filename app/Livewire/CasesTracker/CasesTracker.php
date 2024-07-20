@@ -22,7 +22,6 @@ class CasesTracker extends Component
 
         $this->total_closed_cases = CaseTracker::sum('count_per_day');
         $this->remaining = $this->goal - $this->total_closed_cases;
-        $this->date = now();
 
         if($this->total_closed_cases > $this->goal)
         {
